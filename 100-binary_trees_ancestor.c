@@ -18,14 +18,13 @@ binary_tree_t *binary_trees_ancestor(
 	{
 	return ((binary_tree_t *)first);
 	}
-	else if (first->parent == second)
-	{
-		return (first->parent);
-	}
-	else if (first == second->parent)
-	{
-		return ((binary_tree_t *)first);
-	}
+	
+	if (first == second->parent || !first->parent ||
+			(!first->parent->parent && second->parent))
+		return (binary_trees_ancestor(first, second->parent));
+	else if (first->parent == second || !second->parent ||
+			(!second->parent->parent && first->parent))
+		return (binary_trees_ancestor(first->parent, second));
 	else
 		return (binary_trees_ancestor(first->parent, second->parent));
 }
