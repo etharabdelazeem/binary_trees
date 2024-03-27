@@ -1,11 +1,11 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_rotate_right - rotate the tree to the 
+ * binary_tree_rotate_right - rotate the tree to right 
  * @tree: root node
  * Return: the new parent
  */
-binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree)    
+binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree)    
 {
         binary_tree_t *parent;
 
